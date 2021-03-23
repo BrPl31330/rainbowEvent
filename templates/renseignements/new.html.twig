@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Renseignements{% endblock %}
+
+{% block body %}
+    <h1>Create new Renseignements</h1>
+
+    {{ include('renseignements/_form.html.twig') }}
+
+    <a href="{{ path('renseignements_index') }}">back to list</a>
+{% endblock %}
+
+

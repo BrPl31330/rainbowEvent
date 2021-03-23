@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow-Event</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+
+    {% block carte1 %}
+    {% endblock %}
+
+</head>
+<body>
+    <header>
+        <nav>
+        <a href="{{ path('index') }}"><img src="images/logo.jpg" alt="logo " title="Logo"></a>
+        
+            <a href="{{ path('index') }}">Accueil</a>
+            <a href="{{ path('location') }}">Location</a>
+            <a href="{{ path('boutique') }}">Boutique</a>
+            <a href="{{ path('renseignements') }}">Renseignements</a>
+        </nav>
+    </header>
+
+        <section>
+            {% block body %}
+            {% endblock %}
+            
+            {% block titre1 %}
+            {% endblock %}
+
+            {% block titre2 %}
+            {% endblock %}
+
+            {% block commentaire1 %}
+            {% endblock %}
+
+            {% block annonces %}
+            {% endblock %}
+
+            {% block photo1 %}
+            {% endblock %}
+
+            {% block formulaire %}
+            {% endblock %}
+
+            {% block carte2 %}
+            {% endblock %}
+
+
+        </section>
+    </main>
+    <footer>
+        <p>tous droits réservés</p>
+    </footer>
+    <script src="{{ asset('js/anime.min.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+    {% block monjs %}
+    {% endblock %}
+</body>
+</html>

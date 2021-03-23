@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Renseignements{% endblock %}
+
+{% block body %}
+    <h1>Edit Renseignements</h1>
+
+    {{ include('renseignements/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('renseignements_index') }}">back to list</a>
+
+    {{ include('renseignements/_delete_form.html.twig') }}
+{% endblock %}

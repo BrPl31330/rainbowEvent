@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Renseignements index{% endblock %}
+
+{% block body %}
+    <h1>Renseignements index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Tetephone</th>
+                <th>Sujet</th>
+                <th>Message</th>
+                <th>DateCreation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for renseignement in renseignements %}
+            <tr>
+                <td>{{ renseignement.id }}</td>
+                <td>{{ renseignement.nom }}</td>
+                <td>{{ renseignement.email }}</td>
+                <td>{{ renseignement.tetephone }}</td>
+                <td>{{ renseignement.sujet }}</td>
+                <td>{{ renseignement.message }}</td>
+                <td>{{ renseignement.dateCreation ? renseignement.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('renseignements_show', {'id': renseignement.id}) }}">show</a>
+                    <a href="{{ path('renseignements_edit', {'id': renseignement.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('renseignements_new') }}">Create new</a>
+{% endblock %}
