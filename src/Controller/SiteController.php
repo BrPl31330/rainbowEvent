@@ -38,7 +38,7 @@ class SiteController extends AbstractController
     #[Route('/renseignements', name: 'renseignements', methods: ['GET', 'POST'])]
     public function renseignements(Request $request): Response
     {
-        
+        $messageConfirmation = '<div class="gris">Merci de remplir le formulaire de renseignements</div>';
         $renseignement = new Renseignements();
         $form = $this->createForm(RenseignementsType::class, $renseignement);
         $form->handleRequest($request);
@@ -51,10 +51,12 @@ class SiteController extends AbstractController
             $entityManager->persist($renseignement);
             $entityManager->flush();
 
+            $messageConfirmation = '<div class="vert">Vos informations vont être traitées rapidement </div>';
             //return $this->redirectToRoute('renseignements_index');
         }
 
         return $this->render('site/renseignements.html.twig', [
+            'messageConfirmation' =>$messageConfirmation,
             'renseignement' => $renseignement,
             'form' => $form->createView(),
             'controller_name' => 'SiteController',

@@ -1,3 +1,11 @@
 h1{
     color: blue;
 }
+
+.vert{
+    background-color: green;
+}
+
+.gris{
+    background-color: rgb(216, 212, 212);
+}
