@@ -423,4 +423,24 @@ des blocks definis par le parent
 
     php bin/console make:registration-form
 
-    CA VA GENERER LE CODE...    
+    CA VA GENERER LE CODE... 
+         LE SITE A CASSE CAR IL ME MANQUE UN BUNDLE POUR L'ENVOI D'EMAIL DE CONFIRMATION
+
+    DANS LE TERMINAL (ET DANS LE DOSSIER syfmony/)
+
+    composer require symfonycasts/verify-email-bundle
+
+    SI ON ESSAIE D'ALLER SUR LA PAGE /register POUR CREER UN COMPTE
+    ON A UNE ERREUR SUR LA CONFIG MAILER_DSN 
+
+## config/packages/mailer.yaml
+
+    framework:
+        mailer:
+            dsn: 'null://null'
+
+            LA PAGE /register S'AFFICHE MAIS ON N'A PAS LA TABLE SQL
+
+    php bin/console make:migration
+
+    php bin/console doctrine:migrations:migrate 
