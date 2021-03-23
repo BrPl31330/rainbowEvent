@@ -388,4 +388,39 @@ des blocks definis par le parent
 
     email           string(255)      VARCHAR(255)
     dateCreation    datetime         DATETIME
-    
+
+       LANCER LA COMMANDE POUR COMPLETER LES PROPRIETES...
+    ...
+
+    SE POSER DES QUESTIONS SUR LE RGPD ET LA LEGALITE DES INFOS SUR LES UTILISATEURS...
+
+    * CONNECTER NOTRE ENTITE AVEC LE SYSTEME DE SECURITE DE SYMFONY
+
+    PS C:\laragon\www\symfony> php bin/console make:auth
+
+ What style of authentication do you want? [Empty authenticator]:  [0] Empty authenticator
+  [1] Login form authenticator
+ > 1
+
+ The class name of the authenticator to create (e.g. AppCustomAuthenticator):
+ > LoginFormAuthenticator
+
+ Choose a name for the controller class (e.g. SecurityController) [SecurityController]:
+ > 
+
+ Do you want to generate a '/logout' URL? (yes/no) [yes]:        
+ >
+
+      LANCER LA COMMANDE POUR COMPLETER LES PROPRIETES...
+
+    php bin/console make:entity
+
+    SE POSER DES QUESTIONS SUR LE RGPD ET LA LEGALITE DES INFOS SUR LES UTILISATEURS...
+
+    * CONNECTER NOTRE ENTITE AVEC LE SYSTEME DE SECURITE DE SYMFONY
+
+    * ON VA LANCER LA COMMANDE 
+
+    php bin/console make:registration-form
+
+    CA VA GENERER LE CODE...    
