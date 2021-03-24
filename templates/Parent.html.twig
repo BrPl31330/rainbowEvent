@@ -21,6 +21,15 @@
             <a href="{{ path('boutique') }}">Boutique</a>
             <a href="{{ path('renseignements') }}">Renseignements</a>
         </nav>
+            {% if app.user %}
+            <div class="mb-3">
+                Bienvenue {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                <a href="{{ path('admin') }}">admin</a>
+                <a href="{{ path('app_logout') }}">Déconnexion</a>
+            </div>
+
+
+        {% endif %}
     </header>
 
         <section>

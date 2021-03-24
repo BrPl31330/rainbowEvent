@@ -14,7 +14,17 @@
 
     </head>
     <body>
-        
+        <header class="container">
+            <nav>
+                <a href="{{ path('index') }}">accueil</a>
+        {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('blog_event_index') }}">Gestion annonce blog Event</a>
+                <a href="{{ path('renseignements_index') }}">Gestion renseignements</a>
+                <a href="{{ path('user_index') }}">Gestion administrateur</a>
+                <a href="{{ path('app_logout') }}">déconnexion</a>
+        {% endif %}
+            </nav>
+        </header>
 
         <div class="container">
             {% block body %}{% endblock %}
