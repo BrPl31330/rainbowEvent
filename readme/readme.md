@@ -445,13 +445,130 @@ des blocks definis par le parent
 
     php bin/console doctrine:migrations:migrate
 
-    AJOUTER LE CHAMP email DANS LE FORMULAIRE registrationFormType
-
-    AJOUTER LA DATE PAR DEFAUT POUR LA PROPRIETE dateCreation ->registrationController
-    $user->setDateCreation(new \DateTime());
-
+# AJOUTER LE CHAMP email DANS LE FORMULAIRE registrationFormType
+    ->add('email') ligne21
+# AJOUTER LA DATE PAR DEFAUT POUR LA PROPRIETE dateCreation
+    ->registrationController
+    # $user->setDateCreation(new \DateTime()); ligne 29
+    
     => ON A UN FORMULAIRE DE CREATION QUI FONCTIONNE
 
     ENSUITE VERIFIER LA PAGE /login
 
     => IL FAUT COMPLETER LE CODE PHP POUR REDIRIGER VERS LA BONNE PAGE
+    loginAuthentificator 
+    return new RedirectResponse($this->urlGenerator->generate('index')); //A changer ligne 100
+
+    ****************************************************
+## PROTECTION DE LA PARTIE ADMIN 
+     RAJOUTER UNE LIGNE DANS LE FICHIER 
+    config/packages/security.yaml
+
+```yaml
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
+
+``` 
+## PROTEGER LES FORMULAIRES EN AJOUTANT DES CONTRAINTES 
+    * LISTE DES CONTRAINTES DISPONIBLES
+    https://symfony.com/doc/current/reference/constraints.html
+
+    * LIGNE UNIQUE
+    https://symfony.com/doc/current/reference/constraints/UniqueEntity.html
+
+    * PROPRIETE EMAIL
+    https://symfony.com/doc/current/reference/constraints/Email.html
+```php
+// ...
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
+// ...
+use Symfony\Component\Validator\Constraints as Assert;
+
+
+/**
+ * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
+ * @UniqueEntity(fields={"email"}, message="il y a déjà un compte avec cet email")
+ */
+class User implements UserInterface
+{
+    // ...
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Email(
+     *     message = "désolé '{{ value }}' n'est pas un email valide."
+     * )
+     */
+    private $email;
+
+    // ...
+
+}
+
+```  
+ ## PERSONNALISER LES FORMULAIRES AVEC TWIG
+
+    * PLUSIEURS NIVEAUX DE DETAILS SONT DISPONIBLES 
+        POUR PRENDRE LA MAIN SUR LE CODE HTML DES FORMULAIRES
+
+    https://symfony.com/doc/current/form/form_customization.html
+
+    Modifier l'ordre du formulaire pour l'email
+    ->register.html.twig 
+
+## <h1>Enregistrement</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.username, {
+            label: 'Nom usuel'
+        }) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms, {
+            label: "J'accepte les condition"
+        }) }}
+
+        <button type="submit" class="btn btn-primary">Créer votre compte admin</button>
+    {{ form_end(registrationForm) }}
+    {% endblock %}
+
+## PROJET
+    DANS SON ESPACE ADMIN, 
+        IL PEUT CREER DES ANNONCES
+        IL NE PEUT VOIR QUE SES ANNONCES
+        IL NE PEUT MODIFIER QUE SES ANNONCES
+        IL NE PEUT SUPPRIMER SES ANNONCES
+
+        ADMIN (make:crud et compléter...)
+        AJOUTER LA GESTION 
+        DE TOUS LES USERS
+        DE TOUS LES ANNONCES
+        DE TOUTES LES CATEGORIES
+        
+    SUR LA PARTIE PUBLIQUE
+        AJOUTER UNE PAGE QUI AFFICHE TOUTES LES ANNONCES blog événementiel
+        ET CHAQUE ANNONCE A SA PROPRE PAGE
+
+        AJOUTER UN MOTEUR DE RECHERCHE 
+        POUR CHERCHER LES ANNONCES QUI CONTIENNENT UN MOT CLE
+        ...
+   
+## ENTITE BlogEvent
+
+    id
+    titre
+    contenu
+    categorie
+    image
+    dateCreation
+
+    RAJOUTER LES RELATIONS DANS UN 2E TEMPS
+    user_id     => ONE TO MANY (relation avec User)
