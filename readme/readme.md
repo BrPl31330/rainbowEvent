@@ -443,4 +443,15 @@ des blocks definis par le parent
 
     php bin/console make:migration
 
-    php bin/console doctrine:migrations:migrate 
+    php bin/console doctrine:migrations:migrate
+
+    AJOUTER LE CHAMP email DANS LE FORMULAIRE registrationFormType
+
+    AJOUTER LA DATE PAR DEFAUT POUR LA PROPRIETE dateCreation ->registrationController
+    $user->setDateCreation(new \DateTime());
+
+    => ON A UN FORMULAIRE DE CREATION QUI FONCTIONNE
+
+    ENSUITE VERIFIER LA PAGE /login
+
+    => IL FAUT COMPLETER LE CODE PHP POUR REDIRIGER VERS LA BONNE PAGE
