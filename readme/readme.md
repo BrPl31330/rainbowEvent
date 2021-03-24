@@ -565,10 +565,105 @@ class User implements UserInterface
 
     id
     titre
+    slug (ajouter par la suite)
     contenu
     categorie
     image
     dateCreation
 
+    UNE FOIS LE make:crud FAIT
+    ON PEUT CREER DES ANNONCES EVENT DANS LA PARTIE /admin/annonce blogEvent
+
     RAJOUTER LES RELATIONS DANS UN 2E TEMPS
     user_id     => ONE TO MANY (relation avec User)
+    php bin/console make entity
+     New property name (press <return> to stop adding fields):
+ > user
+
+ Field type (enter ? to see all types) [string]:
+ > ?
+
+Main types
+  * string
+  * text
+  * boolean
+  * integer (or smallint, bigint)
+  * float
+
+  Relationships / Associations
+  * relation (a wizard will help you build the relation)  * ManyToOne
+  * OneToMany
+  * ManyToMany
+  * OneToOne
+
+Array/Object Types
+  * array (or simple_array)
+  * json
+  * object
+  * binary
+  * blob
+
+  Date/Time Types
+  * datetime (or datetime_immutable)
+  * datetimetz (or datetimetz_immutable)
+  * date (or date_immutable)
+  * time (or time_immutable)
+  * dateinterval
+
+Other Types
+  * ascii_string
+  * decimal
+  * guid
+  * json_array
+
+   Field type (enter ? to see all types) [string]:        
+ > relation
+
+ What class should this entity be related to?:
+ > User
+  ------------ ---------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the BlogEvent.user property allowed to be null (nullable)? (yes/no) [yes]:
+ > no
+
+ Do you want to add a new property to User so that you can access/update BlogEvent objects from it - e.g. $user->getBlogEvents()? (yes/no) [yes]:
+ > 
+  A new property will also be added to the User class so 
+that you can access the related BlogEvent objects from it.
+
+ New field name inside User [blogEvents]:
+ >
+  Do you want to activate orphanRemoval on your relationship?
+ A BlogEvent is "orphaned" when it is removed from its related User.
+ e.g. $user->removeBlogEvent($blogEvent)
+
+ NOTE: If a BlogEvent may *change* from one User to another, answer "no".
+
+ Do you want to automatically delete orphaned App\Entity\BlogEvent objects (orphanRemoval)? (yes/no) [no]:      
+ >
+ 
+ updated: src/Entity/BlogEvent.php
+ updated: src/Entity/User.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+ 
+  Success! 
+ 
+n/console make:migration
+## AJOUT DE RELATIONS ENTRE ENTITES
+
+    * DOCUMENTATION UN PEU PLUS DETAILLEE SUR LES ETAPES AVEC make:entity
+    https://symfony.com/doc/current/doctrine/associations.html
+
+    LANCER LA COMMANDE make:entity
+    ET CREER UNE PROPRIETE
+    ET CHOISIR COMME TYPE relation
+    REPONDRE AUX QUESTIONS...
+
+## TWIG POUR AFFICHER UN MENU DIFFERENT SI LE VISITEUR EST CONNECTE
