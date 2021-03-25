@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Renseignements;
 use App\Form\RenseignementsType;
 use App\Repository\BlogEventRepository;
+use App\Entity\BlogEvent;
 
 class SiteController extends AbstractController
 {
@@ -62,6 +63,14 @@ class SiteController extends AbstractController
             'renseignement' => $renseignement,
             'form' => $form->createView(),
             'controller_name' => 'SiteController',
+        ]);
+    }
+
+    #[Route('/{id}', name: 'annonce', methods: ['GET'])]
+    public function annonce(BlogEvent $blogEvent): Response
+    {
+        return $this->render('site/annonce.html.twig', [
+            'blog_event' => $blogEvent,
         ]);
     }
 }

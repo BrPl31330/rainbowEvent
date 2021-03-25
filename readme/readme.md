@@ -802,3 +802,27 @@ class ExampleService
 
 
 ```
+## CREER UNE PAGE POUR CHAQUE ANNONCE
+
+
+    AJOUTER UNE ROUTE AVEC PARAMETRES
+```php
+    #[Route('/annonce/{slug}/{id}', name: 'annonce', methods: ['GET'])]
+    public function annonce(Annonce $annonce): Response
+    {
+        // méthode pour afficher une seule annonce
+        return $this->render('site/annonce.html.twig', [
+            'annonce' => $annonce,
+        ]);
+    }
+
+
+```
+    ET CREER LES LIENS VERS CES PAGES
+
+```twig
+
+<h3><a href="{{ path('annonce', {'slug': annonce.slug, 'id': annonce.id}) }}">{{ annonce.titre }}</a></h3>
+
+```
+    

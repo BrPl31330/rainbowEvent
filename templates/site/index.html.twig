@@ -14,9 +14,7 @@
     <div class="event">
         {% for blog_event in blog_events %}
             <article>
-                <div>{{ blog_event.id }}</div>
-                <h3>{{ blog_event.titre }}</h3>
-                <div>{{ blog_event.slug }}</div>
+                <h3><a href="{{ path('annonce', {'id': blog_event.id}) }}">{{ blog_event.titre }}</a></h3>
                 <p>{{ blog_event.contenu }}</p>
                 <p>{{ blog_event.categorie }}</p>
                 <div>{{ blog_event.image }}</div>
