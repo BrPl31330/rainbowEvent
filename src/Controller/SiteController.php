@@ -8,14 +8,15 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Renseignements;
 use App\Form\RenseignementsType;
+use App\Repository\BlogEventRepository;
 
 class SiteController extends AbstractController
 {
-    #[Route('/', name: 'index')]
-    public function index(): Response
+    #[Route('/', name: 'index', methods: ['GET'])]
+    public function index(BlogEventRepository $blogEventRepository): Response
     {
         return $this->render('site/index.html.twig', [
-            'controller_name' => 'SiteController',
+            'blog_events' => $blogEventRepository->findAll(),
         ]);
     }
 

@@ -4,5 +4,25 @@
 
 {% block body %}
 <h1>Accueil du site</h1>
-
 {% endblock %}  
+
+{% block Evenementiel %}
+<div>
+    {% for blog_event in blog_events %}
+    <h1>Listes des événements :</h1>
+        <article>
+            <div>{{ blog_event.id }}</div>
+            <h3>{{ blog_event.titre }}</h3>
+            <div>{{ blog_event.slug }}</div>
+            <p>{{ blog_event.contenu }}</p>
+            <p>{{ blog_event.categorie }}</p>
+            <div>{{ blog_event.image }}</div>
+            <div>{{ blog_event.dateCreation ? blog_event.dateCreation|date('Y-m-d H:i:s') : '' }}</div>
+        </article>
+    {% else %}
+        <article>
+            <div>Aucun event n'est publié</div>
+        </article>
+    {% endfor %}
+</div>
+{% endblock %}

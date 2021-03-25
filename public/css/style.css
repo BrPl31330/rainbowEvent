@@ -9,3 +9,11 @@ h1{
 .gris{
     background-color: rgb(216, 212, 212);
 }
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    padding:1rem;
+    color: rgb(243, 239, 239);
+    background-color: black;
+}

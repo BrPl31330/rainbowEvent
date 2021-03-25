@@ -761,7 +761,7 @@ class ExampleService
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/membre, roles: ROLE_USER }
+        - { path: ^/membre, roles: [ ROLE_ADMIN ROLE_MEMBRE] }
 
 
 ```
