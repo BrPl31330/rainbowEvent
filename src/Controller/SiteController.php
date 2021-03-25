@@ -15,8 +15,9 @@ class SiteController extends AbstractController
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(BlogEventRepository $blogEventRepository): Response
     {
+        $blog_events = $blogEventRepository->findBy([], ["dateCreation" => "DESC"]);
         return $this->render('site/index.html.twig', [
-            'blog_events' => $blogEventRepository->findAll(),
+           'blog_events' => $blog_events,
         ]);
     }
 

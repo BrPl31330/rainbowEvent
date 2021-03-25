@@ -1,3 +1,14 @@
+html, body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
 h1{
     color: blue;
 }
@@ -16,4 +27,17 @@ nav a {
     padding:1rem;
     color: rgb(243, 239, 239);
     background-color: black;
+}
+/************** Bloc évenementiel page accueil *******************/
+.event{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.event article {
+    width: calc( 100% / 3 - 1rem);
+    background-color: #dddddd;
+    padding: 1rem;
+    margin: 0.5rem;
 }
