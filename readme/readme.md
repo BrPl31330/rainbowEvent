@@ -825,4 +825,17 @@ class ExampleService
 <h3><a href="{{ path('annonce', {'slug': annonce.slug, 'id': annonce.id}) }}">{{ annonce.titre }}</a></h3>
 
 ```
-    
+## FETCH EAGER
+
+    POUR AFFICHER L'AUTEUR DE L'ANNONCE, ON VA OPTIMISER LA REQUETE POUR FAIRE UNE JOINTURE
+    => AJOUTER UNE ANNOTATION fetch="EAGER" dans entity/BlogEvent sur "private user"
+
+```php
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="annonces", fetch="EAGER")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
+```    

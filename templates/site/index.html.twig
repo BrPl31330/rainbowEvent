@@ -15,10 +15,10 @@
         {% for blog_event in blog_events %}
             <article>
                 <h3><a href="{{ path('annonce', {'id': blog_event.id}) }}">{{ blog_event.titre }}</a></h3>
+                <div>Publié par {{ blog_event.user.username }}</div>
                 <p>{{ blog_event.contenu }}</p>
                 <p>{{ blog_event.categorie }}</p>
-                <div>{{ blog_event.image }}</div>
-                <div>{{ blog_event.dateCreation ? blog_event.dateCreation|date('Y-m-d H:i:s') : '' }}</div>
+                <div>{{ blog_event.dateCreation ? blog_event.dateCreation|date('d/m/Y à H:i') : '' }}</div>
             </article>
         {% else %}
             <article>

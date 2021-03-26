@@ -1,7 +1,7 @@
 html, body {
     width: 100%;
     padding: 0;
-    margin: 0;
+    margin: 1;
     font-size: 16px;
 }
 
@@ -24,9 +24,6 @@ h1{
 nav a {
     display: inline-block;
     text-decoration: none;
-    padding:1rem;
-    color: rgb(243, 239, 239);
-    background-color: black;
 }
 /************** Bloc évenementiel page accueil *******************/
 .event{
