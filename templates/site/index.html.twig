@@ -18,6 +18,7 @@
                 <div>Publié par {{ blog_event.user.username }}</div>
                 <p>{{ blog_event.contenu }}</p>
                 <p>{{ blog_event.categorie }}</p>
+                <div><img src="{{ asset('uploads/' ~ blog_event.image) }}"</div>
                 <div>{{ blog_event.dateCreation ? blog_event.dateCreation|date('d/m/Y à H:i') : '' }}</div>
             </article>
         {% else %}
