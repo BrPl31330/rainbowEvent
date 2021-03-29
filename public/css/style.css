@@ -20,11 +20,21 @@ h1{
 .gris{
     background-color: rgb(216, 212, 212);
 }
-
+/* **********Navigation************** */
 nav a {
     display: inline-block;
     text-decoration: none;
+    padding: 1rem;
 }
+
+nav{
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: rgb(148, 144, 144);
+}
+
 /************** Bloc évenementiel page accueil *******************/
 .event{
     display: flex;

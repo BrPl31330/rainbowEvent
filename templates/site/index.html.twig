@@ -3,8 +3,9 @@
 {% block title %}Hello SiteController!{% endblock %}
 
 {% block body %}
+<section class="container">
 <h1>Accueil du site</h1>
-
+</section>
 {% endblock %}  
 
 {% block evenementiel %}
@@ -18,7 +19,9 @@
                 <div>Publié par {{ blog_event.user.username }}</div>
                 <p>{{ blog_event.contenu }}</p>
                 <p>{{ blog_event.categorie }}</p>
-                <div><img src="{{ asset('uploads/' ~ blog_event.image) }}"</div>
+                {% if blog_event.image %}
+                    <div><img src="{{ asset('uploads/' ~ blog_event.image) }}" class="img-fluid"</div>
+                {% endif %}
                 <div>{{ blog_event.dateCreation ? blog_event.dateCreation|date('d/m/Y à H:i') : '' }}</div>
             </article>
         {% else %}

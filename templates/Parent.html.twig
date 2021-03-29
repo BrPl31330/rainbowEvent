@@ -19,16 +19,17 @@
         <a href="{{ path('index') }}"><img src="images/logo.png" alt="logo " title="Logo"></a>
             {# <li class="menu__item" ><a href="{{ path('index') }}" class="menu__link"  >Accueil</a></li> #}
             <a href="{{ path('index') }}">Accueil</a>
+            <a href="{{ path('rechercher') }}">Recherche location</a>
             <a href="{{ path('location') }}">Location</a>
             <a href="{{ path('boutique') }}">Boutique</a>  
             <a href="{{ path('renseignements') }}">Renseignements</a>
         </nav>
             {% if app.user %}
-            <div class="mb-3">
+            <nav class="mb-3">
                 Bienvenue {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
                 <a href="{{ path('admin') }}">admin</a>
                 
-            </div>
+            </nav>
 
 
         {% endif %}
@@ -62,8 +63,8 @@
 
         </section>
     </main>
-    <footer>
-        <p>tous droits réservés</p>
+    <footer class="container">
+        <p>Site Rainbow-Event. Tous droits réservés</p>
     </footer>
     <script src="{{ asset('js/anime.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>

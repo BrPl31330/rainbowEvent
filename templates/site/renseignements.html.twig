@@ -1,6 +1,7 @@
 {% extends 'parent.html.twig' %}
 
 {% block titre1 %}
+<section class="container">
 <h1>Page renseignements</h1>
 
 {{ form_start(form) }}
@@ -8,5 +9,5 @@
     <button class="btn">{{ button_label|default('Save') }}</button>
     {{(messageConfirmation ?? "message par défaut")|raw}}
 {{ form_end(form) }}
-
+</section>
 {% endblock %}

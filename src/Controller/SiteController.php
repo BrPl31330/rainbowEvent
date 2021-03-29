@@ -38,6 +38,27 @@ class SiteController extends AbstractController
         ]);
     }
 
+    #[Route('/rechercher', name: 'rechercher')]
+    public function rechercher(Request $request, BlogEventRepository $blogEventRepository): Response
+    {
+        $mot = $request->get('mot');
+        dump($mot);
+        if (!empty($mot)) {
+            //recherche mot exact
+            //$blog_events = $blogEventRepository->findby([
+               // "titre" =>$mot,
+            //], ["dateCreation" => "DESC"]);
+            //titre + texte 
+            $blog_events = $blogEventRepository->chercherMot($mot);    
+        }
+        
+        //changer blog_event pour recherche matos
+        return $this->render('site/rechercher.html.twig', [
+            'mot'         => $mot,
+            'blog_events' => $blog_events ?? [],
+        ]);
+    }
+
     #[Route('/renseignements', name: 'renseignements', methods: ['GET', 'POST'])]
     public function renseignements(Request $request): Response
     {
@@ -73,4 +94,5 @@ class SiteController extends AbstractController
             'blog_event' => $blogEvent,
         ]);
     }
+
 }
