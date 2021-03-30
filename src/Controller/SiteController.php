@@ -10,6 +10,9 @@ use App\Entity\Renseignements;
 use App\Form\RenseignementsType;
 use App\Repository\BlogEventRepository;
 use App\Entity\BlogEvent;
+use App\Repository\LocationRepository;
+use App\Entity\Location;
+use App\Form\LocationType;
 
 class SiteController extends AbstractController
 {
@@ -30,16 +33,32 @@ class SiteController extends AbstractController
         ]);
     }
 
-    #[Route('/location', name: 'location')]
-    public function location(): Response
+    #[Route('/location', name: 'location', methods: ['GET', 'POST'])]
+    public function location(Request $request): Response
     {
+        $location = new Location();
+        $form = $this->createForm(LocationType::class, $location);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $objetDate = new \DateTime();   
+            $location->setDateCreation($objetDate);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($location);
+            $entityManager->flush();
+
+            //return $this->redirectToRoute('location_index');
+        }
+
         return $this->render('site/location.html.twig', [
+            'location' => $location,
+            'form' => $form->createView(),
             'controller_name' => 'SiteController',
         ]);
     }
 
     #[Route('/rechercher', name: 'rechercher')]
-    public function rechercher(Request $request, BlogEventRepository $blogEventRepository): Response
+    public function rechercher(Request $request, LocationRepository $locationRepository): Response
     {
         $mot = $request->get('mot');
         dump($mot);
@@ -49,14 +68,16 @@ class SiteController extends AbstractController
                // "titre" =>$mot,
             //], ["dateCreation" => "DESC"]);
             //titre + texte 
-            $blog_events = $blogEventRepository->chercherMot($mot);    
+            $locations = $locationRepository->chercherMot($mot);     
         }
-        
+
         //changer blog_event pour recherche matos
         return $this->render('site/rechercher.html.twig', [
             'mot'         => $mot,
-            'blog_events' => $blog_events ?? [],
+            'locations' => $locations ?? [],
         ]);
+
+
     }
 
     #[Route('/renseignements', name: 'renseignements', methods: ['GET', 'POST'])]

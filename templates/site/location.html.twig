@@ -2,6 +2,36 @@
 
 {% block titre1 %}
 <section class="container">
-<h1>Page location</h1>
+<h1>Formulaire location matériel</h1>
+
+{{ include('location/_form.html.twig') }}
+
 </section>
+{% endblock %}  
+
+
+{% block titre2 %}
+{# <section class="container">
+    <h2>Résultat de la recherche {{ mot ?? ''}}</h2>
+    <div class="event">
+        {% for location in locations %}
+            <article>
+                <h3><a href="{{ path('annonce', {'id': location.id}) }}">{{ location.nom }}</a></h3>
+                <p>{{ location.descriptif }}</p>
+                <p>{{ location.categorie }}</p>
+                <p>{{ location.prix }}</p>
+                <p>{{ location.typeReservation }}</p>
+                <p>{{ location.nombreJour }}</p>
+                {% if location.image %}
+                    <div><img src="{{ asset('uploads/' ~ location.image) }}" class="img-fluid"</div>
+                {% endif %}
+                <div>{{ location.dateCreation ? location.dateCreation|date('d/m/Y à H:i') : '' }}</div>
+            </article>
+        {% else %}
+            <article>
+                <div>Aucune référence à cette demande </div>
+            </article>
+        {% endfor %}
+    </div>
+</section> #}
 {% endblock %}

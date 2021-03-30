@@ -21,6 +21,7 @@
         {% if is_granted('ROLE_ADMIN') %}
                 <a href="{{ path('blog_event_index') }}">Gestion annonce blog Event</a>
                 <a href="{{ path('renseignements_index') }}">Gestion renseignements</a>
+                <a href="{{ path('location_index') }}">Gestion locations</a>
                 <a href="{{ path('user_index') }}">Gestion administrateur</a>
                 <a href="{{ path('app_logout') }}">déconnexion</a>
         {% endif %}
