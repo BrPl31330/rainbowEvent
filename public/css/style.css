@@ -1,17 +1,249 @@
-html, body {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    font-size: 16px;
+:root  {
+    --white_color: #DFDFE1;
+    --primary_color: #A0A0A4;
+    --secondary_color: #606167;
+    --black_color: #01020C;
 }
 
-*{
-    box-sizing: border-box;
+html, body {
+    font-weight: normal; /*écriture gras*/
+    font-size: 18px;
+    padding: 0%;
+    /* font-family: 'Roboto', sans-serif; */
 }
+
+/* *{
+    box-sizing: border-box;
+} */
 
 h1{
+    color: var(--secondary_color);
+    text-align: center;
+}
+
+
+
+/*****************************
+*        Navigation          *
+******************************/
+.logo{
+    width: 8%;
+}
+.menu{
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: black;
+
+}
+
+.menu__item{
+    display: inline;
+    margin-left: 30px;
+    border: 2px solid transparent;
+    padding: 11rem0px;
+}
+
+.menu__link{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #DFDFE1;
+    font-weight: bold;
+    line-height: 2rem;
+    background-color: #01020C;
+}
+
+.container_menu{
+    display: block;
+    text-align: justify;
+    margin: 0%;
+}
+
+.social_items {
+    list-style:none;
+    padding: 0.4rem;
     color: blue;
 }
+
+.menu_social{
+    padding-top: 1rem;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*************************************
+*   Bloc diapo page accueil   *
+*************************************/
+.rainbow{
+    background-color: var(--black_color);
+}
+.diaporama{
+    background-color: var(--black_color);
+}
+
+.diapo{
+    position: relative;
+    margin: 0px;
+}
+
+.diapo__element{
+    display: none;
+}
+
+.diapo__element--active{
+    display: initial;
+}
+
+.diapo__image{
+    width: 100%;
+}
+
+.diapo__text{
+    /*positionnement*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Esthétique*/
+    background-color: var(--primary_color);/*var(--black_color)*/
+    text-align: center;
+    padding: 3%;
+    border-radius: 5%;
+}
+
+#fleche-gauche, #fleche-droite{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--white_color);
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 10px;
+}
+.diapo__arrows {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.diapo__arrow {
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 10px;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: border-color 2s, opacity 2s;
+}
+
+.diapo__arrow:hover {
+    opacity: 1;
+    border-color: rgb(158, 158, 245);
+    transition: 1s, border-color 1s;
+}
+
+#fleche-gauche{
+    left: 20px;
+}
+
+#fleche-droite{
+    right: 20px;
+}
+/*************************************
+*   Bloc évenementiel page accueil   *
+*************************************/
+.event__text{
+    
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    
+    background-color: var(--primary_color);
+    text-align: center;
+    padding: 2%;
+    margin-block: 3%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 15%;
+    
+}
+.contenu{
+    height: 20%;
+    border: 2px solid var(--primary_color);
+    width: 100%;
+    text-align: justify;
+    overflow: hidden;
+}
+
+.event{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+
+.event article {
+    width: calc( 100% / 3 - 2rem);
+    background-color: var(--primary_color); 
+    padding: 1%;
+    margin: 1rem;
+    border-radius: 2%;
+
+}
+
+.image__event{
+    width: 80%;
+    margin-left: 10%;
+    
+}
+/*****************************
+*       Page location        *
+******************************/
+
+.locations{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.locations article {
+    width: calc( 100% / 2 - 1rem);
+    background-color: #dfdfe1;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 5%;
+}
+
+.annonceloc{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.annonceloc article {
+    width: calc( 100% / 1 - 1rem);
+    background-color: #dfdfe1;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 5%;
+}
+
+/*****************************
+*     Page renseignement     *
+******************************/
 
 .vert{
     background-color: green;
@@ -20,31 +252,43 @@ h1{
 .gris{
     background-color: rgb(216, 212, 212);
 }
-/* **********Navigation************** */
-nav a {
-    display: inline-block;
-    text-decoration: none;
-    padding: 1rem;
-}
-
-nav{
-    text-align: center;
-}
-
-nav a:hover {
-    background-color: rgb(148, 144, 144);
-}
-
-/************** Bloc évenementiel page accueil *******************/
-.event{
-    display: flex;
-    flex-wrap: wrap;
+/*****************************
+*       Page Label           *
+******************************/
+.diapo__label{
+    height: 30rem;
     width: 100%;
+    background-size: cover;
 }
 
-.event article {
-    width: calc( 100% / 3 - 1rem);
-    background-color: #dddddd;
-    padding: 1rem;
-    margin: 0.5rem;
+
+
+/*****************************
+*           Footer           *
+******************************/
+.footer_first{
+    color: var(--white_color);
+    width: 355px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.social_menu{
+    display: flex;
+ 
+}
+
+.social_container{
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+   
+}
+
+footer{
+    background-color: var(--black_color);
+    color: var(--white_color);
 }

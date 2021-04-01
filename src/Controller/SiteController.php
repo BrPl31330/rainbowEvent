@@ -14,6 +14,7 @@ use App\Repository\LocationRepository;
 use App\Entity\Location;
 use App\Form\LocationType;
 
+
 class SiteController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
@@ -34,9 +35,11 @@ class SiteController extends AbstractController
     }
 
     #[Route('/location', name: 'location', methods: ['GET', 'POST'])]
-    public function location(Request $request): Response
+    public function location(Request $request, LocationRepository $locationRepository): Response
     {
+        $location = $locationRepository->findBy([], ["categorie"=>"DESC"]);
         $location = new Location();
+        
         $form = $this->createForm(LocationType::class, $location);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -53,7 +56,7 @@ class SiteController extends AbstractController
         return $this->render('site/location.html.twig', [
             'location' => $location,
             'form' => $form->createView(),
-            'controller_name' => 'SiteController',
+            'locations' => $locationRepository->findAll(),
         ]);
     }
 
@@ -113,6 +116,14 @@ class SiteController extends AbstractController
     {
         return $this->render('site/annonce.html.twig', [
             'blog_event' => $blogEvent,
+        ]);
+    }
+
+    #[Route('/location/{id}', name: 'annonceloc', methods: ['GET'])]
+    public function annonceloc(Location $location): Response
+    {
+        return $this->render('site/annonceloc.html.twig', [
+            'location' => $location,
         ]);
     }
 

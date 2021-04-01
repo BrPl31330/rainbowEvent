@@ -4,45 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rainbow-Event</title>
-    {# <link rel="stylesheet" href="{{ asset('css/normalize.css') }}"> #}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-
-    {% block carte1 %}
-    {% endblock %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    
+    {% block carte1 %}{% endblock %}
 
 </head>
 <body>
+    {% block monheader %}
     <header>
-        <nav>
-        <a href="{{ path('index') }}"><img src="images/logo.png" alt="logo " title="Logo"></a>
+        <nav class="menu">
+        {# <a href="{{ path('index') }}" class="container_logo"  ><img src="images/logo.png" alt="logo " title="Logo"></a> #}
             {# <li class="menu__item" ><a href="{{ path('index') }}" class="menu__link"  >Accueil</a></li> #}
-            <a href="{{ path('index') }}">Accueil</a>
-            <a href="{{ path('rechercher') }}">Recherche location</a>
-            <a href="{{ path('location') }}">Location</a>
-            <a href="{{ path('boutique') }}">Boutique</a>  
-            <a href="{{ path('renseignements') }}">Renseignements</a>
+            <ul class="container_menu" >
+                <li class="menu__item" ><a href="{{ path('index') }}" class="menu__link"  ><img class="logo" src="images/logo.png" alt="logo " title="Logo"></a></li>
+                <li class="menu__item" ><a href="{{ path('index') }}" class="menu__link" >Accueil</a></li>
+                <li class="menu__item" ><a href="{{ path('rechercher') }}" class="menu__link" >Recherche location</a></li>
+                <li class="menu__item" ><a href="{{ path('location') }}" class="menu__link" >Location</a></li>
+                <li class="menu__item" ><a href="{{ path('boutique') }}" class="menu__link" >Boutique</a></li>  
+                <li class="menu__item" ><a href="{{ path('renseignements') }}" class="menu__link" >Renseignements</a></li>
+                <li class="menu__item" ><a href="https://www.facebook.com/rainbowevent91160/" class="menu__link" ><i class="lab la-facebook-square"></i></a></li>
+                <li class="menu__item" ><a href="https://www.instagram.com/rainbow_event/" class="menu__link" ><i class="lab la-instagram"></i></a></li> 
+                <li class="menu__item" ><a href="https://www.youtube.com/channel/UChU_79Hbi_Qjg-w8GkxN9Zg" class="menu__link" ><i class="lab la-youtube"></i></a></li>
+            </ul>
         </nav>
             {% if app.user %}
             <nav class="mb-3">
                 Bienvenue {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
-                <a href="{{ path('admin') }}">admin</a>
-                
+                <a href="{{ path('admin') }}">admin</a>    
             </nav>
-
-
         {% endif %}
     </header>
+    {% endblock %}
 
         <section>
+            {% block titre1 %}
+            {% endblock %}
+
+            {% block diapo %}
+            {% endblock %}
+
+            {% block annonces %}
+            {% endblock %}
+
             {% block body %}
             {% endblock %}
 
             {% block evenementiel %}
             {% endblock %}
-            
-            {% block titre1 %}
+
+            {% block annonceloc %}
+            {% endblock %}
+
+            {% block label %}
             {% endblock %}
 
             {% block titre2 %}
@@ -65,13 +82,22 @@
 
 
         </section>
-    </main>
-    <footer class="container">
-        <p>Site Rainbow-Event. Tous droits réservés</p>
+            
+    <footer>
+        <div class="footer_first">
+            <nav class="social_container">
+                <p> nous suivre :</p>
+                <ul class="social_menu">
+                    <li class="social_items" ><a href="https://www.facebook.com/rainbowevent91160"  target="_blank"><i class="lab la-facebook-square"></i></a></li>
+                    <li class="social_items" ><a href="https://www.instagram.com/rainbow_event" target="_blank"><i class="lab la-instagram"></i></a></li>
+                    <li class="social_items" ><a href="https://www.youtube.com/channel/UChU_79Hbi_Qjg-w8GkxN9Zg" target="_blank"><i class="lab la-youtube"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+        <p id="copy">Copyright &copy; 2021 www.Rainbow-Event.com - Mentions légales - Politique de confidentialité - Plan du site - Reproduction interdite.</p>
     </footer>
     <script src="{{ asset('js/anime.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
-    {% block monjs %}
-    {% endblock %}
+
 </body>
 </html>

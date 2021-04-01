@@ -10,28 +10,30 @@
 {% endblock %}  
 
 
+
 {% block titre2 %}
-{# <section class="container">
-    <h2>Résultat de la recherche {{ mot ?? ''}}</h2>
-    <div class="event">
+<section  class="diapo">
+<h1>Liste des locations </h1>
+
+    <div class="locations">
         {% for location in locations %}
             <article>
-                <h3><a href="{{ path('annonce', {'id': location.id}) }}">{{ location.nom }}</a></h3>
-                <p>{{ location.descriptif }}</p>
-                <p>{{ location.categorie }}</p>
-                <p>{{ location.prix }}</p>
-                <p>{{ location.typeReservation }}</p>
-                <p>{{ location.nombreJour }}</p>
-                {% if location.image %}
-                    <div><img src="{{ asset('uploads/' ~ location.image) }}" class="img-fluid"</div>
-                {% endif %}
-                <div>{{ location.dateCreation ? location.dateCreation|date('d/m/Y à H:i') : '' }}</div>
+                <div>{{ location.id }}</div>
+                <h3><a href="{{ path('annonceloc', {'id': location.id}) }}">{{ location.nom }}</a></h3>
+                <p><strong>Catégorie :</strong>{{ location.categorie }}</p>
+                <p><strong>Déscriptif :</strong>{{ location.descriptif }}</p>
+                <div>{{ location.image }}</div>
+                <p><strong>Type de réservation :</strong>{{ location.typeReservation }}</p>
+                <p><strong>Nombre de jour :</strong>{{ location.nombreJour }}</p>
+                <p><strong>Tarif :</strong>{{ location.prix }}</p>
+                <p>{{ location.dateCreation ? location.dateCreation|date('d-m-Y') : '' }}</p>
+
             </article>
-        {% else %}
+        {% else %}  
             <article>
-                <div>Aucune référence à cette demande </div>
+                <div>Référence location non trouvée</div>
             </article>
         {% endfor %}
     </div>
-</section> #}
+</section>
 {% endblock %}
