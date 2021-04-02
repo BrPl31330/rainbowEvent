@@ -13,6 +13,7 @@ use App\Entity\BlogEvent;
 use App\Repository\LocationRepository;
 use App\Entity\Location;
 use App\Form\LocationType;
+use App\Repository\ArtisteRepository;
 
 
 class SiteController extends AbstractController
@@ -31,6 +32,14 @@ class SiteController extends AbstractController
     {
         return $this->render('site/boutique.html.twig', [
             'controller_name' => 'SiteController',
+        ]);
+    }
+
+    #[Route('/label', name: 'label')]
+    public function label(ArtisteRepository $artisteRepository): Response
+    {
+        return $this->render('site/label.html.twig', [
+            'artistes' => $artisteRepository->findAll(),
         ]);
     }
 
@@ -127,12 +136,12 @@ class SiteController extends AbstractController
         ]);
     }
 
-    #[Route('/toto', name: 'toto')]
-    public function toto(): Response
+    #[Route('/artistes', name: 'artistes', methods: ['GET'])]
+    public function artistes(ArtisteRepository $artisteRepository): Response
     {
-        return $this->render('site/toto.html.twig', [
+        return $this->render('site/label.html.twig', [
             'controller_name' => 'SiteController',
-        ]);
+        ]);  
     }
 
 }
