@@ -127,4 +127,12 @@ class SiteController extends AbstractController
         ]);
     }
 
+    #[Route('/toto', name: 'toto')]
+    public function toto(): Response
+    {
+        return $this->render('site/toto.html.twig', [
+            'controller_name' => 'SiteController',
+        ]);
+    }
+
 }
