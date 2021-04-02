@@ -9,7 +9,7 @@
     </div>
         <section class="diapo">
             <div class="diapo__element diapo__element--active">
-                <img class="diapo__image" src="images/capture12.png" alt="photo">
+                <img class="diapo__image" src="{{ asset('images/capture12.png')}}" alt="photo">
                 <div class="diapo__text">
                     <h2 class="h1">Studio RAINBOW - EVENT</h2>
                     <br>
@@ -17,7 +17,7 @@
                 </div>
             </div>
                 <div class="diapo__element">
-                    <img class="diapo__image" src="images/capture11.png" alt="photo">
+                    <img class="diapo__image" src="{{ asset('images/capture11.png')}}" alt="photo">
                 <div class="diapo__text">
                     <h2>E V E N E M E N T I E L</h2>
                     <p>Créée en 2015 dans l'optique de faire la promotion d'artistes, Rainbow Event est spécialisé dans ce secteur d'activité.</p>
@@ -25,7 +25,7 @@
             </div>
 
             <div class="diapo__element">
-                <img class="diapo__image" src="images/capture27.png" alt="photo">
+                <img class="diapo__image" src="{{ asset('images/capture27.png')}}" alt="photo">
                 <div class="diapo__text">
                     <h2>S T U D I O / V I D E O</h2>
                     <p>Notre mission est d'accompagner les musiciens professionnels ou amateurs, dans leur évolution musicale.Nous vous proposons de mettre en image vos oeuvres musicales. </p>
@@ -70,19 +70,69 @@
 {% endblock %}
 
 {% block label %}
-<section>
+<section class="diapo">
     <div>
-    <h1 class="display-3" ><strong>Label</strong></h1>
+        <img class="label__image" src="{{ asset('images/capture11.png')}}" alt="photo">
+        <div class="label__texte">
+            <h2 class="h1">L A B E L</h2>
+            <br>
+            <p class="h2">Un arc-en-ciel de talents</p>
+        </div>
+        <div class="event__text">
+            <p>Le studio RAINBOW-EVENT a crée son label en 2015. Les artistes que l'on y trouve sont des coups de coeur entre ce label et  Philippe RZEPKA qui a choisi de monter ce label afin de pouvoir choisir de garder la passion intacte comme au premier jour, diffuser une musique authentique.</p>
+        </div>
     </div>
-        <section>
-            <div>
-                <img class="diapo__image" src="images/capture12.png" alt="photo">
-                <div class="diapo__text">
-                    <h2 class="h1">label</h2>
-                    <br>
-                    <p class="h2"></p>
-                </div>
-            </div>
-        </section>    
+
+</section>    
+<section class="card__label">
+
+<article>
+<div class="card mb-3" style="max-width: 650px; margin: auto;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img class="label_card__image" src="{{ asset('images/label1.png')}}" alt="label1">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><a href="#">ISHANE</a></h5>
+        <p class="card-text">Ihsane, également orthographié ehsane, est un terme arabe qui signifie, "perfection", "excellence" ou "embellissement". C'est la troisième dimension de la religion islamique: islam, iman et ihsane.</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+<article>
+<div class="card mb-3" style="max-width: 650px; margin: auto;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img class="label_card__image" src="{{ asset('images/Capture.png')}}" alt="label2">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><a href="#">THIERRY CHATEL</a></h5>
+        <p class="card-text">« En soixante quatre, au Brésil, au pouvoir les militaires, Cages de fers pour les civils, Hostiles au régime totalitaire. » 1964, année de sa naissance, plus d’un demi siècle d’histoire qu’il raconte, conte et chante.</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+<article>
+<div class="card mb-3" style="max-width: 650px; margin: auto;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img class="label_card__image" src="{{ asset('images/label3.png')}}" alt="label3">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><a href="#">ZOOLIYA</a></h5>
+        <p class="card-text">Déborah Boyer, dite « Zooliya » est née le 13 avril 1998 à Saint-Pierre sur l’île de la Réunion de parents musiciens et sculpteurs. Zooliya baigne dans le monde artistique depuis sa plus tendre enfance.</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
 </section>
 {% endblock %}
