@@ -825,6 +825,80 @@ class ExampleService
 <h3><a href="{{ path('annonce', {'slug': annonce.slug, 'id': annonce.id}) }}">{{ annonce.titre }}</a></h3>
 
 ```
+## Uploader des images
+# Dans le fichier annonceType ajouter sur  image
+```
+
+//ajout use
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\Image;
+
+    ->add('image', FileType::class, [
+        'label' => 'choisissez une photo à uploader',
+
+        // unmapped means that this field is not associated to any entity property
+        'mapped' => false,
+
+        // make it optional so you don't have to re-upload the PDF file
+        // every time you edit the Product details
+        'required' => false,
+
+        // unmapped fields can't define their validation using annotations
+        // in the associated entity, so you can use the PHP constraint classes
+        'constraints' => [
+            new Image([
+                'maxSize' => '10240k',
+                // on peut ajouter des contraintes sur les tailles en pixels...
+            ])
+        ],
+    ])
+```
+## dans fichier ArtisteController
+## Uploader des images
+# Dans le fichier annonceType ajouter sur  image
+```
+use 
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+Symfony\Component\String\Slugger\SluggerInterface;
+
+
+    //gestion upload image
+    $imageFile = $form->get('image')->getData();
+
+    // this condition is needed because the 'image' field is not required
+    // so the PDF file must be processed only when a file is uploaded
+    if ($imageFile) {
+        $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+        // this is needed to safely include the file name as part of the URL
+        $safeFilename = $slugger->slug($originalFilename);
+        $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFile->guessExtension();
+
+        // Move the file to the directory where images are stored
+        try {
+            $imageFile->move(
+                $this->getParameter('images_directory'),    // dossier cible
+                $newFilename
+            );
+        } catch (FileException $e) {
+            // ... handle exception if something happens during file upload
+        }
+
+        // updates the 'imageFilename' property to store the PDF file name
+        // instead of its contents
+        $artiste->setImage($newFilename);
+    }
+    else {
+        $artiste->setImage("");     // aucun fichier uploade
+    }
+
+```
+##  dans le fichier service.yaml
+```
+parameters:
+    images_directory: '%kernel.project_dir%/public/uploads'
+```
+
+
 ## FETCH EAGER
 
     POUR AFFICHER L'AUTEUR DE L'ANNONCE, ON VA OPTIMISER LA REQUETE POUR FAIRE UNE JOINTURE
