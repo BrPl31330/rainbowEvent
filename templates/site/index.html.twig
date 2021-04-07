@@ -9,7 +9,7 @@
     </div>
         <section class="diapo">
             <div class="diapo__element diapo__element--active">
-                <img class="diapo__image" src="{{ asset('images/capture12.png')}}" alt="photo">
+                <img class="diapo__image" src="{{ asset('images/bureauStudio.png')}}" alt="photo">
                 <div class="diapo__text">
                     <h2 class="h1">Studio RAINBOW - EVENT</h2>
                     <br>
@@ -17,7 +17,7 @@
                 </div>
             </div>
                 <div class="diapo__element">
-                    <img class="diapo__image" src="{{ asset('images/capture11.png')}}" alt="photo">
+                    <img class="diapo__image" src="{{ asset('images/IMG1.jpg')}}" alt="photo">
                 <div class="diapo__text">
                     <h2>E V E N E M E N T I E L</h2>
                     <p>Créée en 2015 dans l'optique de faire la promotion d'artistes, Rainbow Event est spécialisé dans ce secteur d'activité.</p>
@@ -37,13 +37,13 @@
             </div>
                   <article class="boutonAction"> <!-- appel à l'action-->
                 <div>
-                  <a class="boutonAction2" href="#">EVENEMENTIEL</a>
+                  <a class="boutonAction2" href="#event">EVENEMENTIEL</a>
                 </div>
                 <div>
-                  <a class="boutonAction2" href="#">LABEL</a>
+                  <a class="boutonAction2" href="#label">LABEL</a>
                 </div>
                 <div>
-                  <a class="boutonAction2" href="#">STUDIO</a>
+                  <a class="boutonAction2" href="#studio">STUDIO</a>
                 </div>
                 <div>
                   <a class="boutonAction2"  href="{{ path('cours') }}">ENSEIGNEMENTS</a>
@@ -56,7 +56,7 @@
 
 {% block evenementiel %}
 <section>
-    <h1>E V E N E M E N T I E L</h1>
+    <div id="event"><h1>E V E N E M E N T I E L</h1></div>
         <div class="event__text">
             <h2>Listes des événements :</h2>
             <p>Créée en 2015 dans l'optique de faire la promotion d'artistes, Rainbow Event est spécialisé dans ce secteur d'activité. Nous sommes à votre disposition pour toute création d'un évènement que ce soit un festival, un concert, spectacle de rue, etc... Vous pouvez retrouver toutes les dates de nos différentes prestations sur l'agenda du site.</p>
@@ -85,10 +85,11 @@
 
 {% block label %}
 <section class="diapo">
+<div id="label"></div>
     <div>
-        <img class="label__image" src="{{ asset('images/capture11.png')}}" alt="photo">
+        <img class="label__image" src="{{ asset('images/imageMixage.png')}}" alt="photo">
         <div class="label__texte">
-            <h2 class="h1">L A B E L</h2>
+            <h2 class="h1">L A B E L</h2>           
             <br>
             <p class="h2">Un arc-en-ciel de talents</p>
         </div>
@@ -170,6 +171,7 @@
 
 {% block studio %}
 <section class="diapo">
+<div id="studio"></div>
     <div>
         <img class="label__image" src="{{ asset('images/table3.png')}}" alt="photo">
         <div class="label__texte">
