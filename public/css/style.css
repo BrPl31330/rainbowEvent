@@ -82,6 +82,26 @@ h1{
 /*************************************
 *   Bloc diapo page accueil   *
 *************************************/
+.boutonAction{
+    position: absolute;
+    bottom: 30%; /*hauteur*/
+    left: 8%;/*gauche*/
+    transform: translateX(30%);/*droit*/
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+
+}
+
+.boutonAction2{
+    border-radius: 50px;
+    background-color:  var(--primary_color);
+    color: black;
+    opacity: 0.9;
+    border: 2px solid var(--black_color);
+    padding: 10%;
+}
+
 .rainbow{
     background-color: var(--black_color);
 }
@@ -109,21 +129,24 @@ h1{
 .diapo__text{
     /*positionnement*/
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* Esthétique*/
     background-color: var(--primary_color);/*var(--black_color)*/
     text-align: center;
     padding: 3%;
-    border-radius: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 15%;
+    border: 2px solid var(--black_color);  
 }
 
 #fleche-gauche, #fleche-droite{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--white_color);
+    color: var(--black_color);
     font-size: 3rem;
     cursor: pointer;
     padding: 10px;
@@ -150,7 +173,7 @@ h1{
 
 .diapo__arrow:hover {
     opacity: 1;
-    border-color: rgb(158, 158, 245);
+    border-color: rgb(1, 1, 20);
     transition: 1s, border-color 1s;
 }
 
@@ -178,7 +201,7 @@ h1{
     margin-left: 15%;
     margin-right: 15%;
     border-radius: 15%;
-    
+    border: 2px solid var(--black_color);  
 }
 .contenu{
     height: 20%;
@@ -200,6 +223,7 @@ h1{
     padding: 1%;
     margin: 1rem;
     border-radius: 2%;
+    border: 2px solid var(--black_color);  
 }
 
 .image__event{
@@ -223,6 +247,7 @@ h1{
     padding: 1rem;
     margin: 0.5rem;
     border-radius: 5%;
+    border: 2px solid var(--black_color);  
 }
 
 .annonceloc{
@@ -281,6 +306,7 @@ h1{
     text-align: center;
     padding: 2%;
     border-radius: 5%;
+    border: 2px solid var(--black_color);  
 }
 
 .label__titre{
@@ -307,7 +333,8 @@ h1{
     background-color: var(--primary_color); 
     padding: 1%;
     margin: 1rem;
-    border-radius: 2%;  
+    border-radius: 2%;
+    border: 2px solid var(--black_color);    
 }
 
 .label_card__image{
@@ -322,6 +349,10 @@ h1{
 	background:center center no-repeat; 
 	background-size:contain; 
 }
+/*****************************
+*           Studio           *
+******************************/
+
 /*****************************
 *           Footer           *
 ******************************/

@@ -35,8 +35,22 @@
             <i id="fleche-gauche" class="las la-angle-left diapo__arrow"></i>
             <i id="fleche-droite" class="las la-angle-right diapo__arrow"></i>
             </div>
+                  <article class="boutonAction"> <!-- appel à l'action-->
+                <div>
+                  <a class="boutonAction2" href="#">EVENEMENTIEL</a>
+                </div>
+                <div>
+                  <a class="boutonAction2" href="#">LABEL</a>
+                </div>
+                <div>
+                  <a class="boutonAction2" href="#">STUDIO</a>
+                </div>
+                <div>
+                  <a class="boutonAction2"  href="{{ path('cours') }}">ENSEIGNEMENTS</a>
+                </div>
+            </article> <!-- appel à l'action-->
         </section> <!-- Diaporama -->
-    
+
 </section>
 {% endblock %} 
 
@@ -134,6 +148,74 @@
   </div>
 </div>
 </article>
+</article>
+<article>
+<div class="card mb-3" style="max-width: 650px; margin: auto;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img class="label_card__image" src="{{ asset('images/SaintSimon.png')}}" alt="label3">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><a href="{{ path('labels') }}">Saint Simon</a></h5>
+        <p class="card-text">Saint Simon est un artiste né le 10 septembre 2000, à Pau, dans le sud-ouest de la France. Son premier choc artistique subvient lors de ses 4 ans. Il assiste à un ballet donné par l’école où ses soeurs apprennent la danse classique. Eblouis par la danse, la musique, les costumes et la mise en scène, sa vocation commence à se dessiner. Ce sera à ses 7 ans qu’il rentrera au conservatoire de sa ville natale. </p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
 </section>
 {% endblock %}
 
+{% block studio %}
+<section class="diapo">
+    <div>
+        <img class="label__image" src="{{ asset('images/table3.png')}}" alt="photo">
+        <div class="label__texte">
+            <h2 class="h1">S T U D I O</h2>
+            <br>
+            <p class="h2">La double étiquette</p>
+        </div>
+        <div class="event__text">
+            <p>Le Studio combine la double étiquette de studio d'enregistrement et de studio de répétition. Aménagé dans les anciens locaux de La Poste de Jouy-en-Josas, il propose une large surface de 40m2 où vous pourrez travailler dans des conditions idéales, ainsi qu'une régie de 15m2. Ce local est équipé professionellement. Lors de votre arrivée, vous serez accueillis chaleureusement et un espace salon vous sera mis à disposition. Selon votre type de demande veuillez trouver ci-dessous le descriptif du matériel proposé si besoin.</p> 
+            <p><strong>(Mise à disposition gratuite sur demande lors de la réservation)</strong></p>
+        </div>
+    </div>
+</section> 
+<section>
+<div class="event">
+  <article>
+      <h5><a href="#">REPETITION</a></h5>
+      <p>1 table de mixage numérique YAMAHA 01v</p><p>1 accordeur de batterie Tune-bot</p>
+      <p>1 filtre acoustique</p><p>2 micros SHURE SM57 <strong>-</strong> 3 micros SHURE SM58</p><p>2 HP de façade JBL JRX100</p>
+      <p>2 HP retour JBL JRX200</p>
+      <p>1 guitare électro acoustique YAMAHA + 1 ampli IBANEZ Troubadour TA20 et/ou BLACKSTAR HT-1R</p>
+      <p>1 basse + 1 ampli basse AMPEG BA-115</p><p>1 piano droit acoustique</p>
+      <p>1 clavier ROLLAND FP30</p><p>1 clavier ROLLAND EP.7E</p>
+      <p>1 batterie PEARL</p> <p>1 djembé</p>
+      <a href="#" class="card-link">Lien</a>
+  </article>
+  <article>
+      <h5><a href="#">ENREGISTREMENT</a></h5>
+      <div><strong><em>Matériel idem répétition +</em></strong></div>
+      <p><strong><em>Micro dynamique</em></strong></p><p>1 Audix D6</p><p>1 Audix D4</p><p>1 Audix D2</p><p>1 Audix I5</p>
+      <p>1 micro pince Musedo</p><p><strong><em>Micro statique</em></strong></p><p>1 T.Bone SG450 + suspension</p>
+      <p>1 SE Electronics 2200 AII + suspension + pop</p><p>2 JZ BT-201</p><p>Micro électret</p>
+      <p>2 Phonia UMC70</p>
+      <a href="#" class="card-link">Lien</a>
+  </article>
+    <article>
+      <h5><a href="#">MATERIEL ENREGISTREMENT</a></h5>
+      <p>1 Table de mixage numérique Behringer X32</p>
+      <p>1 logiciel de traitement audio PROTOOLS version12</p>
+      <p>1 logiciel de traitement audio ABLETON LIVE 10 suite</p>
+      <p>2 monitoring YAMAHA MR8 MK2</p>
+      <p>1 carte son KOMPLETE AUDIO6</p>
+      <p>1 casque DT770 PRO</p>
+      <p>1 casque SENNHEISER HD 205</p>
+      <p>1 ampli casque BEHRINGER POWERPLAY PRO-XL HA4700</p>
+      <a href="#" class="card-link">Lien</a>
+  </article>
+</section>
+{% endblock %}

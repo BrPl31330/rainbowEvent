@@ -35,6 +35,14 @@ class SiteController extends AbstractController
         ]);
     }
 
+    #[Route('/cours', name: 'cours')]
+    public function cours(): Response
+    {
+        return $this->render('site/cours.html.twig', [
+            'controller_name' => 'SiteController',
+        ]);
+    }
+
     #[Route('/labels', name: 'labels')]
     public function labels(ArtisteRepository $artisteRepository): Response
     {
@@ -136,14 +144,6 @@ class SiteController extends AbstractController
         ]);
     }
 
-    // #[Route('/artistes', name: 'artistes', methods: ['GET'])]
-    // public function artistes(ArtisteRepository $artisteRepository): Response
-    // {
-    //     return $this->render('site/label.html.twig', [
-    //         'controller_name' => 'SiteController',
-    //     ]);  
-    // }
-
     #[Route('/labels/{id}', name: 'label', methods: ['GET'])]
     public function label(Artiste $artiste): Response
     {
@@ -151,4 +151,5 @@ class SiteController extends AbstractController
             'artiste' => $artiste,
         ]);
     }
+
 }
