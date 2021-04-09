@@ -9,15 +9,14 @@
     </div>
         <section class="diapo">
             <div class="diapo__element diapo__element--active">
-                <img class="diapo__image" src="{{ asset('images/bureauStudio.png')}}" alt="photo">
+                <img class="label__image" src="{{ asset('images/bureauStudio.png')}}" alt="photo">
                 <div class="diapo__text">
-                    <h2 class="h1">Studio RAINBOW - EVENT</h2>
-                    <br>
-                    <p class="h2">Un arc-en-ciel d'activités</p>
+                    <h3 class="h2">Studio RAINBOW - EVENT</h3>
+                    <p class="h3">Un arc-en-ciel d'activités</p>
                 </div>
             </div>
                 <div class="diapo__element">
-                    <img class="diapo__image" src="{{ asset('images/IMG1.jpg')}}" alt="photo">
+                    <img class="label__image" src="{{ asset('images/IMG1.jpg')}}" alt="photo">
                 <div class="diapo__text">
                     <h2>E V E N E M E N T I E L</h2>
                     <p>Créée en 2015 dans l'optique de faire la promotion d'artistes, Rainbow Event est spécialisé dans ce secteur d'activité.</p>
@@ -25,9 +24,10 @@
             </div>
 
             <div class="diapo__element">
-                <img class="diapo__image" src="{{ asset('images/IMG2.jpg')}}" alt="photo">
+                <img class="label__image" src="{{ asset('images/IMG2.jpg')}}" alt="photo">
                 <div class="diapo__text">
                     <h2>S T U D I O / V I D E O</h2>
+                    <br>
                     <p>Notre mission est d'accompagner les musiciens professionnels ou amateurs, dans leur évolution musicale.Nous vous proposons de mettre en image vos oeuvres musicales. </p>
                 </div>
             </div>
@@ -35,19 +35,13 @@
             <i id="fleche-gauche" class="las la-angle-left diapo__arrow"></i>
             <i id="fleche-droite" class="las la-angle-right diapo__arrow"></i>
             </div>
-                  <article class="boutonAction"> <!-- appel à l'action-->
-                <div>
-                  <a class="boutonAction2" href="#event">EVENEMENTIEL</a>
-                </div>
-                <div>
-                  <a class="boutonAction2" href="#label">LABEL</a>
-                </div>
-                <div>
-                  <a class="boutonAction2" href="#studio">STUDIO</a>
-                </div>
-                <div>
-                  <a class="boutonAction2"  href="{{ path('cours') }}">ENSEIGNEMENTS</a>
-                </div>
+              <article class="boutonAction"> <!-- appel à l'action-->
+                <nav>
+                  <li><a class="boutonAction2" href="#event">EVENEMENTIEL</a></li>
+                  <li><a class="boutonAction2" href="#label">LABEL</a></li>
+                  <li><a class="boutonAction2" href="#studio">STUDIO</a></li>
+                  <li><a class="boutonAction2"  href="{{ path('cours') }}">ENSEIGNEMENTS</a></li>
+                </nav>
             </article> <!-- appel à l'action-->
         </section> <!-- Diaporama -->
 
@@ -65,7 +59,7 @@
         {% for blog_event in blog_events %}
             <article>
                 <h3><a href="{{ path('annonce', {'id': blog_event.id}) }}">{{ blog_event.titre }}</a></h3>
-                <div>Publié par {{ blog_event.user.username }}</div>
+                {# <div>Publié par {{ blog_event.user.username }}</div> #}
                 <div>Le {{ blog_event.dateCreation ? blog_event.dateCreation|date('d/m/Y') : '' }}</div>
                 <p class="contenu">{{ blog_event.contenu }}</p>
                 {# <p>Catégorie : {{ blog_event.categorie }}</p> #}
@@ -159,7 +153,7 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title"><a href="{{ path('labels') }}">Saint Simon</a></h5>
-        <p class="card-text">Saint Simon est un artiste né le 10 septembre 2000, à Pau, dans le sud-ouest de la France. Son premier choc artistique subvient lors de ses 4 ans. Il assiste à un ballet donné par l’école où ses soeurs apprennent la danse classique. Eblouis par la danse, la musique, les costumes et la mise en scène, sa vocation commence à se dessiner. Ce sera à ses 7 ans qu’il rentrera au conservatoire de sa ville natale. </p>
+        <p class="card-text">Saint Simon est un artiste né le 10 septembre 2000, à Pau, dans le sud-ouest de la France. Son premier choc artistique subvient lors de ses 4 ans. Il assiste à un ballet donné par l’école où ses soeurs apprennent la danse classique. </p>
         <p class="card-text"><small class="text-muted"></small></p>
       </div>
     </div>
@@ -218,6 +212,53 @@
       <p>1 casque SENNHEISER HD 205</p>
       <p>1 ampli casque BEHRINGER POWERPLAY PRO-XL HA4700</p>
       <a href="#" class="card-link">Lien</a>
+  </article>
+</section>
+{% endblock %}
+
+{% block contact %}
+<section class="diapo">
+<div id="studio"></div>
+    <div>
+        <img class="contact__image" src="{{ asset('images/photo groupe.png')}}" alt="photo">
+        <div class="label__texte">
+            <h2 class="h1">C O N T A C T</h2>
+            <br>
+            <p class="h2">L'équipe à votre service</p>
+        </div>
+    </div>
+</section>
+<section class="contact">
+  <article>        
+    <div class="contact__text">
+      <h3>Une question ?</h3> 
+      <p>Si vous avez la moindre interogation ou une demande de service qui ne figure pas sur notre site, <a href="{{ path('renseignements') }}">contactez nous</a>, nous nous ferons un plaisir de vous rencontrer.</p> 
+      <h3>Horaires</h3>
+      <p>L'accueil du studio est ouvert de 10h à 18h, du Lundi au Vendredi.</p>
+      <p>Sur rendez-vous : la semaine jusqu'à 22h, ainsi que le samedi.</p>
+      <p><strong></strong></p>
+      <h3>Adresse postale</h3>
+      <p>SIEGE SOCIAL 10, rue du parc des sports 91160 CHAMPLAN</p>
+      <p>STUDIO RAINBOW-EVENT 1, rue du temple 78350 JOUY EN JOSAS</p>
+      <h3>TELEPHONE</h3>
+      <p>06 61 01 60 06</p>
+      <h3>MAIL</h3><p>rainbowevent91160@gmail.com</p>
+      </div>
+  </article>
+  <article>
+    <div class="contact__text">
+      <h3> Nous suivre :</h3>
+        <nav>
+          <ul class="social_menu">
+            <li class="social_items" ><a href="https://www.facebook.com/rainbowevent91160"><img class="img__social"src="uploads/svg/facebook.svg" alt=""></a></li>
+            <li class="social_items" ><a href="https://www.instagram.com/rainbow_event"><img src="uploads/svg/instagram.svg" alt=""></a></li>
+            <li class="social_items" ><a href="https://www.youtube.com/channel/UChU_79Hbi_Qjg-w8GkxN9Zg"><img src="uploads/svg/youtube.svg" alt=""></a></li>
+          </ul>
+        </nav>
+    </div>
+    <div class="contact__text">
+      <h1>Inscription à la newsletter</h1>
+    </div>
   </article>
 </section>
 {% endblock %}

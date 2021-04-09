@@ -35,6 +35,30 @@ class SiteController extends AbstractController
         ]);
     }
 
+    #[Route('/mention_legale', name: 'mention_legale')]
+    public function mention_legale(): Response
+    {
+        return $this->render('site/mention_legale.html.twig', [
+            'controller_name' => 'SiteController',
+        ]);
+    }
+
+    #[Route('/conditionVente', name: 'conditionVente')]
+    public function conditionVente(): Response
+    {
+        return $this->render('site/conditionVente.html.twig', [
+            'controller_name' => 'SiteController',
+        ]);
+    }
+
+    #[Route('/conditionUtilisation', name: 'conditionUtilisation')]
+    public function conditionUtilisation(): Response
+    {
+        return $this->render('site/conditionUtilisation.html.twig', [
+            'controller_name' => 'SiteController',
+        ]);
+    }
+
     #[Route('/cours', name: 'cours')]
     public function cours(): Response
     {

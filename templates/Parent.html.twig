@@ -81,6 +81,18 @@
             {% block tarif_enseignements %}
             {% endblock %}
 
+            {% block contact %}
+            {% endblock %}
+
+            {% block mentionLegale %}
+            {% endblock %}
+
+            {% block conditionvente %}
+            {% endblock %}
+
+            {% block conditionutilisation %}
+            {% endblock %}
+
             {% block formulaire %}
             {% endblock %}
 
@@ -93,15 +105,16 @@
     <footer>
         <div class="footer_first">
             <nav class="social_container">
-                <p> nous suivre :</p>
-                <ul class="social_menu">
-                    <li class="social_items" ><a href="https://www.facebook.com/rainbowevent91160"  target="_blank"><i class="lab la-facebook-square"></i></a></li>
-                    <li class="social_items" ><a href="https://www.instagram.com/rainbow_event" target="_blank"><i class="lab la-instagram"></i></a></li>
-                    <li class="social_items" ><a href="https://www.youtube.com/channel/UChU_79Hbi_Qjg-w8GkxN9Zg" target="_blank"><i class="lab la-youtube"></i></a></li>
-                </ul>
+             <p> nous suivre :</p>   
+            <ul class="social_menu">
+                
+                <li class="social_items" ><a href="https://www.facebook.com/rainbowevent91160"><img class="img__social"src="uploads/svg/facebook.svg" alt=""></a></li>
+                <li class="social_items" ><a href="https://www.instagram.com/rainbow_event"><img src="uploads/svg/instagram.svg" alt=""></a></li>
+                <li class="social_items" ><a href="https://www.youtube.com/channel/UChU_79Hbi_Qjg-w8GkxN9Zg"><img src="uploads/svg/youtube.svg" alt=""></a></li>
+            </ul>
             </nav>
         </div>
-        <p id="copy">Copyright &copy; 2021 www.Rainbow-Event.com - <a href="https://www.inrs.fr/footer/mentions-legales.html"  target="_blank">Mentions légales(inrs)</a> - Politique de confidentialité - Plan du site - Reproduction interdite.</p>
+        <p id="copy">Copyright &copy; 2021 www.Rainbow-Event.com - <a href="{{ path('mention_legale') }}"  >Mentions légales</a> -  <a href="{{ path('conditionVente') }}">Conditions générales de vente</a> - <a href="{{ path('conditionUtilisation') }}">Conditions générales d'utilisation</a> - Reproduction interdite.</p>
     </footer>
     <script src="{{ asset('js/anime.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
