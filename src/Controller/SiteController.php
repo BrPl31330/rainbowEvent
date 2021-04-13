@@ -112,7 +112,7 @@ class SiteController extends AbstractController
                // "titre" =>$mot,
             //], ["dateCreation" => "DESC"]);
             //titre + texte 
-            $locations = $locationRepository->chercherMot($mot);     
+            $locations = $locationRepository->chercherMot($mot);   
         }
 
         //changer blog_event pour recherche matos

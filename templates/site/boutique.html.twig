@@ -1,7 +1,49 @@
 {% extends 'parent.html.twig' %}
 
 {% block titre1 %}
+<a class="button"href="#"></i></a>
 <section  class="diapo">
 <h1 class="label__titre">Page boutique</h1>
+<br class="recherche">
+</section>
+{% endblock %}
+
+{% block boutique %}
+<section>
+
+<div class="boutique">
+<br class="recherche">
+    <article>
+        <div class="card" style="width: 18rem;">
+            <img src="{{ asset('images/carte200euros.png')}}" class="card-img-top" alt="Carte cadeau green">
+            <div class="card-body">
+                <h5 class="card-title">Carte cadeau green</h5>
+                <p class="card-text">200 Euros TTC</p>
+                <a href="#" class="btn btn-primary">Ajouter au panier</a>
+            </div>
+        </div>
+    </article>
+    <article>
+        <div class="card" style="width: 18rem;">
+            <img src="{{ asset('images/carte100euros.png')}}" class="card-img-top" alt="Carte cadeau blue">
+            <div class="card-body">
+                <h5 class="card-title">Carte cadeau blue</h5>
+                <p class="card-text">100 Euros TTC</p>
+                <a href="#" class="btn btn-primary">Ajouter au panier</a>
+            </div>
+        </div>
+    </article>
+    <article>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ asset('images/carte50euros.png')}}" class="card-img-top" alt="Carte cadeau purple">
+                <div class="card-body">
+                    <h5 class="card-title">Carte cadeau purple</h5>
+                    <p class="card-text">50 Euros TTC</p>
+                    <a href="#" class="btn btn-primary">Ajouter au panier</a>
+                </div>
+            </div>
+            <br class="recherche">
+    </article>
+    </div>
 </section>
 {% endblock %}

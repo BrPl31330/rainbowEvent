@@ -21,6 +21,41 @@ h1{
     text-align: center;
 }
 
+    /*****************************
+    *    Back to Top Button      *
+    ******************************/
+
+.button {
+    display: inline-block;
+    background-color: var(--secondary_color);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 30px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s;
+    z-index: 1000;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+
+.button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: rgb(22, 21, 21);
+}
+
+
 
 @media only screen and (min-width: 400px) { 
     /* la regle s'applique pour des ecrans aux tailles > 400px */
@@ -117,6 +152,15 @@ h1{
         overflow: hidden;
     }
 
+    /************** bloc cours **************/
+    .tarif__cours article {
+        width: calc( 100% / 1 - 2rem);
+        background-color: var(--primary_color); 
+        padding: 1%;
+        margin: 1rem;
+        border-radius: 2%;
+        border: 2px solid var(--black_color);  
+    }
     /**************Footer  **********************/
     .contact article {
         width: calc( 100% / 1 - 2rem);
@@ -162,7 +206,7 @@ h1{
     }
 
     .menu{  
-        position: relative;
+        /* position: relative; */
         top: 0;
         left: 0;
         right: 0;
@@ -264,6 +308,16 @@ h1{
         border: 2px solid var(--black_color);    
     }
 
+        /* Page cours */
+        .tarif__cours article {
+            width: calc( 100% / 2 - 2rem);
+            background-color: var(--primary_color); 
+            padding: 1%;
+            margin: 1rem;
+            border-radius: 2%;
+            border: 2px solid var(--black_color);  
+        }
+
 }
 
 @media all and (min-width: 1024px)  { 
@@ -321,6 +375,16 @@ h1{
         width: 100%;
         text-align: justify;
         overflow: hidden;
+    }
+
+    /* Page cours */
+    .tarif__cours article {
+        width: calc( 100% / 4 - 2rem);
+        background-color: var(--primary_color); 
+        padding: 1%;
+        margin: 1rem;
+        border-radius: 2%;
+        border: 2px solid var(--black_color);  
     }
 
     /* footer */
@@ -472,9 +536,23 @@ h1{
     width: 100%;  
 }
 
+/*****************************
+*       Page boutique        *
+******************************/
 
-
-
+.boutique{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.boutique article {
+    width: calc( 100% / 3 - 2rem);
+    background-color: var(--primary_color); 
+    padding: 1%;
+    margin: 1rem;
+    border-radius: 2%;
+    border: 2px solid var(--black_color);  
+}
 /*****************************
 *       Page location        *
 ******************************/
@@ -669,14 +747,7 @@ h1{
     width: 100%;
 }
 
-.tarif__cours article {
-    width: calc( 100% / 4 - 2rem);
-    background-color: var(--primary_color); 
-    padding: 1%;
-    margin: 1rem;
-    border-radius: 2%;
-    border: 2px solid var(--black_color);  
-}
+
 
 .formules{
     display: flex;
@@ -714,6 +785,17 @@ h1{
 .orange{
     background-color: orange;
 }
+/*****************************
+*   Page recherche           *
+******************************/
+.espace{
+    margin-top: 15%;
+}
+
+.recherche{
+    text-align: center;
+}
+
 /*****************************
 *           Footer           *
 ******************************/

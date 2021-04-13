@@ -2,9 +2,9 @@
 
 {% block titre1 %}
 <section class="container">
-<h1 class="label__titre">Formulaire location matériel</h1>
+<h1 class="label__titre">Matériel son et lumière à louer</h1>
 
-{{ include('location/_form.html.twig') }}
+{# {{ include('location/_form.html.twig') }} #}
 
 </section>
 {% endblock %}  
@@ -13,8 +13,10 @@
 
 {% block titre2 %}
 <section  class="diapo">
+<a class="button"href="#"></i></a>
+<br class="recherche">
 <h1>Liste des locations </h1>
-
+<br class="recherche">
     <div class="locations">
         {% for location in locations %}
             <article>
