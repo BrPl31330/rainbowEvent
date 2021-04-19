@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
@@ -21,6 +22,7 @@
         {# <a href="{{ path('index') }}" class="container_logo"  ><img src="images/logo.png" alt="logo " title="Logo"></a> #}
             {# <li class="menu__item" ><a href="{{ path('index') }}" class="menu__link"  >Accueil</a></li> #}
             <ul class="container_menu" >
+                
                 <li class="menu__item" ><a href="{{ path('index') }}" class="menu__link"  ><img class="logo" src="{{ asset('images/logo.png')}}" alt="logo " title="Logo"></a></li>
                 <li class="menu__item" ><a href="{{ path('index') }}" class="menu__link" >Accueil</a></li>
                 <li class="menu__item" ><a href="{{ path('labels') }}" class="menu__link" >Artistes</a></li>
@@ -28,15 +30,18 @@
                 <li class="menu__item" ><a href="{{ path('location') }}" class="menu__link" >Location</a></li>
                 <li class="menu__item" ><a href="{{ path('boutique') }}" class="menu__link" >Boutique</a></li>  
                 <li class="menu__item" ><a href="{{ path('renseignements') }}" class="menu__link" >Renseignements</a></li>
-                <li class="menu__item" ><a href="https://www.facebook.com/rainbowevent91160/" class="menu__link" ><i class="lab la-facebook-square"></i></a></li>
-                <li class="menu__item" ><a href="https://www.instagram.com/rainbow_event/" class="menu__link" ><i class="lab la-instagram"></i></a></li> 
-                <li class="menu__item" ><a href="https://www.youtube.com/channel/UChU_79Hbi_Qjg-w8GkxN9Zg" class="menu__link" ><i class="lab la-youtube"></i></a></li>
+                <li class="menu__item" ><a href="https://www.facebook.com/rainbowevent91160/" target="_blank" class="menu__link" ><i class="lab la-facebook-square"></i></a></li>
+                <li class="menu__item" ><a href="https://www.instagram.com/rainbow_event/" target="_blank" class="menu__link" ><i class="lab la-instagram"></i></a></li> 
+                <li class="menu__item" ><a href="https://www.youtube.com/channel/UChU_79Hbi_Qjg-w8GkxN9Zg" target="_blank" class="menu__link" ><i class="lab la-youtube"></i></a></li>
+            </ul>
+            <ul>
+            <a href="{{ path('app_register') }}">Connexion administration</a>
             </ul>
         </nav>
             {% if app.user %}
             <nav class="mb-3">
                 Bienvenue {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
-                <a href="{{ path('user_index') }}">admin</a>    
+                <a href="{{ path('user_index') }}">admin</a>
             </nav>
         {% endif %}
     </header>
@@ -100,6 +105,9 @@
             {% block formulaire %}
             {% endblock %}
 
+            {% block calendrier %}
+            {% endblock %}
+
             {% block carte2 %}
             {% endblock %}
 
@@ -112,9 +120,9 @@
              <p> nous suivre :</p>   
             <ul class="social_menu">
                 
-                <li class="social_items" ><a href="https://www.facebook.com/rainbowevent91160"><img class="img__social"src="uploads/svg/facebook.svg" alt=""></a></li>
-                <li class="social_items" ><a href="https://www.instagram.com/rainbow_event"><img src="uploads/svg/instagram.svg" alt=""></a></li>
-                <li class="social_items" ><a href="https://www.youtube.com/channel/UChU_79Hbi_Qjg-w8GkxN9Zg"><img src="uploads/svg/youtube.svg" alt=""></a></li>
+                <li class="social_items" ><a href="https://www.facebook.com/rainbowevent91160" target="_blank"><img class="img__social"src="uploads/svg/facebook.svg" alt="facebook"></a></li>
+                <li class="social_items" ><a href="https://www.instagram.com/rainbow_event" target="_blank"><img src="{{ asset('uploads/svg/instagram.svg')}}" alt="instagram"></a></li>
+                <li class="social_items" ><a href="https://www.youtube.com/channel/UChU_79Hbi_Qjg-w8GkxN9Zg" target="_blank" ><img src="{{ asset('uploads/svg/youtube.svg')}}" alt="youtube"></a></li>
             </ul>
             </nav>
         </div>

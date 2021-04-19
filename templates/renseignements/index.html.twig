@@ -11,7 +11,11 @@
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Email</th>
-                <th>Tetephone</th>
+                <th>Telephone</th>
+                <th>Sono Eclairage</th>
+                <th>Son Lumiere</th>
+                <th>Photo Video</th>
+                <th>Autres</th>
                 <th>Sujet</th>
                 <th>Message</th>
                 <th>DateCreation</th>
@@ -25,6 +29,10 @@
                 <td>{{ renseignement.nom }}</td>
                 <td>{{ renseignement.email }}</td>
                 <td>{{ renseignement.tetephone }}</td>
+                <td>{{ renseignement.sonoEclairage }}</td>
+                <td>{{ renseignement.sonLumiere }}</td>
+                <td>{{ renseignement.photoVideo }}</td>
+                <td>{{ renseignement.autres }}</td>
                 <td>{{ renseignement.sujet }}</td>
                 <td>{{ renseignement.message }}</td>
                 <td>{{ renseignement.dateCreation ? renseignement.dateCreation|date('Y-m-d H:i:s') : '' }}</td>

@@ -14,7 +14,11 @@ class RenseignementsType extends AbstractType
         $builder
             ->add('nom')
             ->add('email')
-            ->add('tetephone')
+            ->add('tetephone') 
+            ->add('sonoEclairage')
+            ->add('sonLumiere')
+            ->add('photoVideo')
+            ->add('autres')
             ->add('sujet')
             ->add('message')
 //            ->add('dateCreation')

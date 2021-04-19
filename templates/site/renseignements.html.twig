@@ -4,6 +4,7 @@
 <a class="button"href="#"></i></a>
 <section class="container">
 <h1 class="label__titre">Page renseignements</h1>
+<br class="recherche">
 
 {{ form_start(form) }}
     {{ form_widget(form) }}
@@ -11,4 +12,8 @@
     {{(messageConfirmation ?? "message par défaut")|raw}}
 {{ form_end(form) }}
 </section>
+{% endblock %}
+
+{% block calendrier %}
+
 {% endblock %}

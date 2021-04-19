@@ -47,6 +47,26 @@ class Renseignements
      */
     private $dateCreation;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $sonoEclairage;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $sonLumiere;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $photoVideo;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $autres;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +140,54 @@ class Renseignements
     public function setDateCreation(\DateTimeInterface $dateCreation): self
     {
         $this->dateCreation = $dateCreation;
+
+        return $this;
+    }
+
+    public function getSonoEclairage(): ?bool
+    {
+        return $this->sonoEclairage;
+    }
+
+    public function setSonoEclairage(?bool $sonoEclairage): self
+    {
+        $this->sonoEclairage = $sonoEclairage;
+
+        return $this;
+    }
+
+    public function getSonLumiere(): ?bool
+    {
+        return $this->sonLumiere;
+    }
+
+    public function setSonLumiere(?bool $sonLumiere): self
+    {
+        $this->sonLumiere = $sonLumiere;
+
+        return $this;
+    }
+
+    public function getPhotoVideo(): ?bool
+    {
+        return $this->photoVideo;
+    }
+
+    public function setPhotoVideo(?bool $photoVideo): self
+    {
+        $this->photoVideo = $photoVideo;
+
+        return $this;
+    }
+
+    public function getAutres(): ?bool
+    {
+        return $this->autres;
+    }
+
+    public function setAutres(?bool $autres): self
+    {
+        $this->autres = $autres;
 
         return $this;
     }
