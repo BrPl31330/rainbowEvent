@@ -212,6 +212,8 @@ h1{
         right: 0;
         z-index: 1;
         background-color: black;
+        color: var(--white_color);
+        padding-left: 2%;
     }
 
     .menu__item{
