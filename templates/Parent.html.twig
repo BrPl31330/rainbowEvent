@@ -2,10 +2,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Rainbow-Event</title>
-    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {# <link rel="stylesheet" href="{{ asset('css/normalize.css') }}"> #}
+    
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -20,18 +20,17 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-LEN6D79XNM');
     </script>
-
     {% block carte1 %}{% endblock %}
 
+    {# link css #}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
     <header>
         <nav class="menu">
-        {# <a href="{{ path('index') }}" class="container_logo"  ><img src="images/logo.png" alt="logo " title="Logo"></a> #}
-            {# <li class="menu__item" ><a href="{{ path('index') }}" class="menu__link"  >Accueil</a></li> #}
+  
             <ul class="container_menu" >
                 <a href="{{ path('index') }}" class="menu__link"  ><img class="logo" src="{{ asset('images/logo.png')}}" alt="logo " title="Logo"></a>
                 <li class="menu__item" ><a href="{{ path('index') }}" class="menu__link" >Accueil</a></li>
@@ -44,7 +43,10 @@
                 <li class="menu__item" ><a href="https://www.instagram.com/rainbow_event/" target="_blank" class="menu__link" ><i class="lab la-instagram"></i></a></li> 
                 <li class="menu__item" ><a href="https://www.youtube.com/channel/UChU_79Hbi_Qjg-w8GkxN9Zg" target="_blank" class="menu__link" ><i class="lab la-youtube"></i></a></li>
             </ul>
-        </nav>
+            <ul>
+                <li class="menu__item" ><a href="{{ path('app_login') }}">connexion</a></li>
+            </ul>
+            </nav>
         {% if is_granted('ROLE_ADMIN') %}
             <nav class="menu">
                 Bienvenue {{ app.user.username }} 
@@ -53,15 +55,13 @@
                 <li class="menu__item" ><a href="{{ path('user_index') }}"> Super admin</a></li>
             </nav>
 
-            {% elseif is_granted('ROLE_USER') %}
+        {% elseif is_granted('ROLE_USER') %}
             <nav class="menu">
                 Bienvenue {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a></li>
                 <li class="menu__item" ><a href="{{ path('admin') }}">admin</a></li>
             </nav>
-                    {% endif %}
-            <nav class="menu">
-                <li class="menu__item" ><a href="{{ path('app_login') }}">connexion</a></li>
-            </nav>
+        {% endif %}
+
     </header>
 
         <section>
