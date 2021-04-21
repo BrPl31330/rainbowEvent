@@ -16,7 +16,7 @@
                 </div>
             </div>
                 <div class="diapo__element">
-                    <img class="label__image" src="{{ asset('images/IMG1.jpg')}}" alt="photo">
+                    <img class="label__image" src="{{ asset('images/studioCanap.png')}}" alt="photo">
                 <div class="diapo__text">
                     <h2>E V E N E M E N T I E L</h2>
                     <p>Créée en 2015 dans l'optique de faire la promotion d'artistes, Rainbow Event est spécialisé dans ce secteur d'activité.</p>
@@ -24,7 +24,7 @@
             </div>  
 
             <div class="diapo__element">
-                <img class="label__image" src="{{ asset('images/IMG2.jpg')}}" alt="photo">
+                <img class="label__image" src="{{ asset('images/studioMusique.png')}}" alt="photo">
                 <div class="diapo__text">
                     <h2>S T U D I O / V I D E O</h2>
                     <br>
@@ -36,11 +36,11 @@
             <i id="fleche-droite" class="las la-angle-right diapo__arrow"></i>
             </div>
               <article class="boutonAction"> <!-- appel à l'action-->
-                <nav>
-                  <li><a class="boutonAction2" href="#event">EVENEMENTIEL</a></li>
-                  <li><a class="boutonAction2" href="#label">LABEL</a></li>
-                  <li><a class="boutonAction2" href="#studio">STUDIO</a></li>
-                  <li><a class="boutonAction2"  href="{{ path('cours') }}">ENSEIGNEMENTS</a></li>
+                <nav class="buttonAction">
+                  <a class="boutonAction2" href="#event">EVENEMENTIEL</a>
+                  <a class="boutonAction2" href="#label">LABEL</a>
+                  <a class="boutonAction2" href="#studio">STUDIO</a>
+                  <a class="boutonAction2"  href="{{ path('cours') }}">ENSEIGNEMENTS</a>
                 </nav>
             </article> <!-- appel à l'action-->
         </section> <!-- Diaporama -->
@@ -105,7 +105,7 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title"><a href="{{ path('labels') }}">ISHANE</a></h5>
+        <h5 class="card-title"><a href="{{ path('labels') }}">IHSANE</a></h5>
         <p class="card-text">Ihsane, également orthographié ehsane, est un terme arabe qui signifie, "perfection", "excellence" ou "embellissement". C'est la troisième dimension de la religion islamique: islam, iman et ihsane.</p>
         <p class="card-text"><small class="text-muted"></small></p>
       </div>
@@ -192,7 +192,7 @@
       <p>1 basse + 1 ampli basse AMPEG BA-115</p><p>1 piano droit acoustique</p>
       <p>1 clavier ROLLAND FP30</p><p>1 clavier ROLLAND EP.7E</p>
       <p>1 batterie PEARL</p> <p>1 djembé</p>
-      <a href="#" class="card-link">Lien</a>
+      <a href="{{ path('cours') }}" class="card-link">Lien tarifs</a>
   </article>
   <article>
       <h5><a href="#">ENREGISTREMENT</a></h5>
@@ -201,7 +201,7 @@
       <p>1 micro pince Musedo</p><p><strong><em>Micro statique</em></strong></p><p>1 T.Bone SG450 + suspension</p>
       <p>1 SE Electronics 2200 AII + suspension + pop</p><p>2 JZ BT-201</p><p>Micro électret</p>
       <p>2 Phonia UMC70</p>
-      <a href="#" class="card-link">Lien</a>
+      <a href="{{ path('cours') }}" class="card-link">Lien tarifs</a>
   </article>
     <article>
       <h5><a href="#">MATERIEL ENREGISTREMENT</a></h5>
@@ -213,7 +213,7 @@
       <p>1 casque DT770 PRO</p>
       <p>1 casque SENNHEISER HD 205</p>
       <p>1 ampli casque BEHRINGER POWERPLAY PRO-XL HA4700</p>
-      <a href="#" class="card-link">Lien</a>
+      <a href="{{ path('cours') }}" class="card-link">Lien tarifs</a>
   </article>
 </section>
 {% endblock %}

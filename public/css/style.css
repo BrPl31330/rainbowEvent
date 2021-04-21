@@ -21,6 +21,8 @@ h1{
     text-align: center;
 }
 
+
+
     /*****************************
     *    Back to Top Button      *
     ******************************/
@@ -281,7 +283,7 @@ h1{
     }
 
     .contenu{
-        height: 70%;
+        height: 100%;
         border: 2px solid var(--primary_color);
         width: 100%;
         text-align: justify;
@@ -431,6 +433,8 @@ h1{
 
 .rainbow{
     background-color: var(--black_color);
+    margin-bottom: 0%;
+    padding-top: 1%;
 }
 .diaporama{
     background-color: var(--black_color);
@@ -450,7 +454,7 @@ h1{
 }
 
 .diapo__image{
-    width: 100%;
+    width: 100vh;
 }
 
 .diapo__text{
