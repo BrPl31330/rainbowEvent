@@ -747,13 +747,19 @@ h1{
 /*****************************
 *      enseignements         *
 ******************************/
+.titrebleu{
+    color: blue;
+}
+
+
+/*****************************
+*      enseignements         *
+******************************/
 .tarif__cours{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
-
-
 
 .formules{
     display: flex;
