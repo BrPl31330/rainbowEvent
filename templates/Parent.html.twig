@@ -42,23 +42,21 @@
                 <li class="menu__item" ><a href="https://www.facebook.com/rainbowevent91160/" target="_blank" class="menu__link" ><i class="lab la-facebook-square"></i></a></li>
                 <li class="menu__item" ><a href="https://www.instagram.com/rainbow_event/" target="_blank" class="menu__link" ><i class="lab la-instagram"></i></a></li> 
                 <li class="menu__item" ><a href="https://www.youtube.com/channel/UChU_79Hbi_Qjg-w8GkxN9Zg" target="_blank" class="menu__link" ><i class="lab la-youtube"></i></a></li>
-            </ul>
-            <ul class="rainbow">
-                <li class="menu__item" ><a href="{{ path('app_login') }}">connexion</a></li>
+                <li class="menu__item" ><a href="{{ path('app_login') }}">Connexion administration</a></li>
             </ul>
             </nav>
         {% if is_granted('ROLE_ADMIN') %}
             <nav class="menu">
                 Bienvenue {{ app.user.username }} 
                 <li class="menu__item" ><a href="{{ path('admin') }}">admin</a></li>
+                {# <li class="menu__item" ><a href="{{ path('membre') }}">Membre</a></li> #}
                 <li class="menu__item" ><a href="{{ path('app_logout') }}">Déconnexion</a></li>
-                <li class="menu__item" ><a href="{{ path('user_index') }}"> Super admin</a></li>
             </nav>
 
-        {% elseif is_granted('ROLE_USER') %}
+        {% elseif is_granted('ROLE_MEMBRE') %}
             <nav class="menu">
                 Bienvenue {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a></li>
-                <li class="menu__item" ><a href="{{ path('admin') }}">admin</a></li>
+                <li class="menu__item" ><a href="{{ path('membre') }}">Membre</a></li>
             </nav>
         {% endif %}
 

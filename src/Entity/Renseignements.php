@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\RenseignementsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=RenseignementsRepository::class)
@@ -24,6 +25,9 @@ class Renseignements
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email(
+     *     message = "désolé '{{ value }}' n'est pas un email valide."
+     * )
      */
     private $email;
 
