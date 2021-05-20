@@ -57,8 +57,6 @@ window.onload = function () {
         ELEMENTS[compteur].classList.add("diapo__element--active");
     });
 
-    // ****************Questionnaire footer******************************
-
 } //Fin window.onload
 
 /*****************************

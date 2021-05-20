@@ -11,24 +11,24 @@
             <div class="diapo__element diapo__element--active">
                 <img class="label__image" src="{{ asset('images/bureauStudio.png')}}" alt="photo">
                 <div class="diapo__text">
-                    <h3 class="h2">Studio RAINBOW - EVENT</h3>
-                    <p class="h3">Un arc-en-ciel d'activités</p>
+                    <h3 class="h3">LE STUDIO</h3>
+                    <p class="h4">Un arc-en-ciel d'activités</p>
                 </div>
             </div>
                 <div class="diapo__element">
                     <img class="label__image" src="{{ asset('images/studioCanap.png')}}" alt="photo">
                 <div class="diapo__text">
                     <h2>E V E N E M E N T I E L</h2>
-                    <p>Créée en 2015 dans l'optique de faire la promotion d'artistes, Rainbow Event est spécialisé dans ce secteur d'activité.</p>
+                    <p>Rainbow Event est spécialisé dans la promotion d'artistes.</p>
                 </div>
             </div>  
 
             <div class="diapo__element">
                 <img class="label__image" src="{{ asset('images/studioMusique.png')}}" alt="photo">
                 <div class="diapo__text">
-                    <h2>S T U D I O / V I D E O</h2>
+                    <h2>STUDIO / VIDEO</h2>
                     <br>
-                    <p>Notre mission est d'accompagner les musiciens professionnels ou amateurs, dans leur évolution musicale.Nous vous proposons de mettre en image vos oeuvres musicales. </p>
+                    <p>Nous vous proposons de mettre en image vos oeuvres musicales. </p>
                 </div>
             </div>
             <div class="diapo__arrows">
@@ -61,11 +61,12 @@
                 <h3><a href="{{ path('annonce', {'id': blog_event.id}) }}">{{ blog_event.titre }}</a></h3>
                 {# <div>Publié par {{ blog_event.user.username }}</div> #}
                 <div>Le {{ blog_event.dateCreation ? blog_event.dateCreation|date('d/m/Y') : '' }}</div>
+                {% if blog_event.image %}
+                <div><img class="image__event"src="{{ asset('uploads/' ~ blog_event.image) }}" class="img-fluid"</div>
+                {% endif %}
                 <p class="contenu">{{ blog_event.contenu }}</p>
                 {# <p>Catégorie : {{ blog_event.categorie }}</p> #}
-                {% if blog_event.image %}
-                    <div><img class="image__event"src="{{ asset('uploads/' ~ blog_event.image) }}" class="img-fluid"</div>
-                {% endif %}
+
                 
             </article>
         {% else %}
@@ -84,9 +85,8 @@
 <div id="label"></div>
     <div>
         <img class="label__image" src="{{ asset('images/imageMixage.png')}}" alt="photo">
-        <div class="label__texte">
-            <h2 class="h1">L A B E L</h2>           
-            <br>
+        <div class="diapo__text">
+            <h2 class="h1">L A B E L</h2>
             <p class="h2">Un arc-en-ciel de talents</p>
         </div>
         <div class="event__text">
@@ -94,7 +94,7 @@
         </div>
     </div>
 
-</section>    
+</section>      
 <section class="card__label">
 
 <article>
@@ -170,9 +170,8 @@
 <div id="studio"></div>
     <div>
         <img class="label__image" src="{{ asset('images/table3.png')}}" alt="photo">
-        <div class="label__texte">
-            <h2 class="h1">S T U D I O</h2>
-            <br>
+        <div class="diapo__text">
+            <h2 class="h1">STUDIO</h2>
             <p class="h2">La double étiquette</p>
         </div>
         <div class="event__text">
@@ -222,11 +221,11 @@
 <section class="diapo">
 <div id="studio"></div>
     <div>
-        <img class="contact__image" src="{{ asset('images/photo groupe.png')}}" alt="photo">
-        <div class="label__texte">
-            <h2 class="h1">C O N T A C T</h2>
+        <img class="label__image" src="{{ asset('images/photo groupe.png')}}" alt="photo">
+        <div class="diapo__text">
+            <h2 class="h2">CONTACT</h2>
             <br>
-            <p class="h2">L'équipe à votre service</p>
+            <p class="h3">Une équipe à votre service</p>
         </div>
     </div>
 </section>
